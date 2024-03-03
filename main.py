@@ -51,7 +51,7 @@ def game():
 
     # Difficulty Function For Guesses
     
-    difficulty = int(input("⚡ Difficulty: Choose \n\t1 for Easy (5-10 guesses) \n\t2 for Medium (3-6 guesses) \n\t3 for hard (2-4 Guesses) \n\t4 for extreme hard (1-2) guesses"))
+    difficulty = int(input("⚡ Difficulty: Choose \n\t1 for Easy (5-10 guesses) \n\t2 for Medium (3-6 guesses) \n\t3 for hard (2-4 Guesses) \n\t4 for extreme hard (1-2) guesses \n"))
     
     # Easter Egg (5,6) randomly generated. If Matches It Will Reveal The Number For You :( Don't Try To Cheat 
     egg = random.randint(5,6)
@@ -104,7 +104,10 @@ def game():
             else:
                 # For Wrong guesses
                 guess = guess - 1
-                print(f"You have {guess} guesses left")  
+                if userg < number :
+                    print(f"You guessed lower, You have {guess} guesses left")
+                elif userg > number :
+                    print(f"You guessed higher, You have {guess} guesses left")
                 # If Guess = 1 It will reveal lucky hint if you have luck
                 if guess == 1 :
                     value = random.randint(0,7)
