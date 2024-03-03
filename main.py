@@ -39,15 +39,15 @@ def game():
     hint1 = number - x
     hint2 = number + x
 
-    if number > hint1 or number == hint1:
+    if number > hint1 or number == hint1 or hint1 < 0:
         hint1 = random.randint(1, 50)
 
-    elif number < hint2 or number == hint2:
+    elif number < hint2 or number == hint2 or hint1 > 100:
         hint2 = random.randint(51, 100)
 
 
-    if hint1 < number < hint2:
-        print(f"💡 Hint: The number is higher than {hint1} and lower than {hint2}.")
+    # if hint1 < number < hint2:
+    print(f"💡 Hint: The number is higher than {hint1} and lower than {hint2}.")
 
     # Difficulty Function For Guesses
     
@@ -125,6 +125,7 @@ def game():
                         data = int(data)
                         # If Score = 0 it will not substract
                     if data == 0:
+                        score = data
                         print("You Have 0 Score 😢")
                         # If Not It Will substract 1 from score
                     elif data > 0:
