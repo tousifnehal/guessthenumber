@@ -7,8 +7,8 @@ import random
 import os
 
 # Files Path For Storing Scores And High Scores
-scorefile = "score.txt"
-hiscorefile = "hiscore.txt"
+scorefile = "score"
+hiscorefile = "hiscore"
 
 # If ScoreFile Exists Write The Value To 0
 if os.path.exists(scorefile) == True :
@@ -73,8 +73,8 @@ def game():
     
     difficulty = int(input("⚡ Difficulty: Choose \n\t1 for Easy (5-10 guesses) \n\t2 for Medium (3-6 guesses) \n\t3 for hard (2-4 Guesses) \n\t4 for extreme hard (1-2) guesses \n"))
     
-    # Easter Egg (5,6) randomly generated. If Matches It Will Reveal The Number For You :( Don't Try To Cheat 
-    egg = random.randint(5,6)
+    # Easter Egg (5,6,7,8) randomly generated. If Matches It Will Reveal The Number For You :( Don't Try To Cheat 
+    egg = random.randint(5,8)
     if difficulty == egg :
         guess = random.randint(1,10)
         print("😲 Oh No! You Knew The Easter Egg. Cheat Mode enabled")
